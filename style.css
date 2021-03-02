@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f2f2f2;
+}
+.wrapper{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    animation: show_notification 1s ease forwards;
+
+}
+@keyframes show_notification{
+    0%{
+        transform: translateX(-100%);
+    }
+    40%{
+        transform: translateX(10%);
+    }
+    80%, 100%{
+        transform:translateX(20px)
+    }
+}
+.wrapper.hide{
+    animation: hide_notification 1s ease forwards;
+}
+
+    @keyframes hide_notification{
+        0%{
+            transform: translateX(0px);
+        }
+        40%{
+            transform: translateX(0%);
+        }
+        80%, 100%{
+            opacity: 0;
+            pointer-events: none;
+            transform:translateX(-100%)
+        }
+    } 
+
+.wrapper .toast{
+    background: #fff;
+    padding: 10px 15px 0px 10px;
+    border-radius: 10px;
+    border-left: 5px solid #2ecc71;
+    width: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.15);
+}
+.wrapper .toast.offline{
+    border-color: #ccc;
+}
+.toast .content{
+    display: flex;
+    align-items: center;
+}
+.toast .content .icon{
+    font-size: 23px;
+    background-color: #2ecc71;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+}
+.toast.offline .content .icon{
+    background-color: #ccc;
+}
+.toast .content .details{
+    margin-left: 20px;
+}
+.content .details span{
+    font-size: 20px;
+    font-weight: 500;
+}
+.content .details p{
+    color: #878787;
+}
+.toast .colse-icon{
+    background: #bbbbbb;
+    font-size: 20px;
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+.reactionHappy{
+    font-size: 30px;
+    color: #ffd402;
+    text-align: center;
+}
+.reactionSad{
+    font-size: 30px;
+    color: #ccc;
+    text-align: center;
+}
